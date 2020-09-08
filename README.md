@@ -6,4 +6,5 @@
 
 * * * * * * * * * *
 
-[![Generic Badge](https://img.shields.io/badge/Discord.js-v12.x-<COLOR>.svg)](https://shields.io/) [![Generic Badge](https://img.shields.io/badge/Fucks given for this-none-<COLOR>.svg)](https://shields.io/)
+[![Generic Badge](https://img.shields.io/badge/Discord.js-v12.x-<COLOR>.svg)](https://shields.io/)
+[![Generic Badge](https://img.shields.io/badge/Fucks given for this-none-<COLOR>.svg)](https://shields.io/)
