@@ -27,6 +27,7 @@ fs.readdir(__dirname + '/commands', (err, files) => {
     }
 });
 
+
 client.login(token);
 
 client.on('ready', () => {
@@ -34,6 +35,7 @@ client.on('ready', () => {
 });
 
 client.on('message', (message) => {
+
     if (!message.content.startsWith(prefix)) return;
     if (message.author.bot) return;
 
@@ -47,5 +49,23 @@ client.on('message', (message) => {
         client.commands.get(command_name)(client, message, args);
     } catch(err) {
         error('MessageEvent: ' + err);
+    }
+
+});
+
+client.on('guildMemberAdd', (guild_member) => {
+
+    /**
+     * Checks wether to trust a member or not
+     * @param {Discord.GuildMember} member - The object of the member that joined the guild
+     * @param {Number} minAge - The days a account has to exist to be trustfull
+     * @returns {boolean} trustfull
+     */
+    function checkUser(member, minAge) {
+        let time      = new Date().getTime();
+        let created   = member.user.createdTimestamp;
+        let trustfull = time - (minAge * 1000 * 60 * 60 * 24) < created ? false : true;
+
+        return trustfull;
     }
 });
