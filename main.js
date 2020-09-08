@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const colors  = require('colors');
 const fs      = require('fs');
+const moment  = require('moment');
 
 const warn    = require('./utils/warn');
 const info    = require('./utils/info');
@@ -14,6 +15,9 @@ const client  = new Discord.Client({
 });
 
 client.commands = new Map();
+
+moment.locale('de');
+moment.locales('de');
 
 fs.readdir(__dirname + '/commands', (err, files) => {
     if (err) error('CommandHandler: ' + err);
@@ -53,6 +57,12 @@ client.on('message', (message) => {
 
 });
 
+const teenage_tube = client.guilds.cache.get('511984977894965269');
+const mute_role    = teenage_tube.roles.cache.find(role => role.name == "Muted");
+const z_role       = teenage_tube.roles.cache.find(role => role.name == "Zweitaccount");
+const log_channel  = teenage_tube.channels.cache.find(channel => channel.name == "log");
+const main_channel = teenage_tube.channels.cache.find(channel => channel.name == "hauptkanal");
+
 client.on('guildMemberAdd', (guild_member) => {
 
     /**
@@ -68,4 +78,5 @@ client.on('guildMemberAdd', (guild_member) => {
 
         return trustfull;
     }
+    
 });
