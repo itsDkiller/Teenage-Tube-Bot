@@ -1,0 +1,31 @@
+{
+  "name": "teenage-tube-bot",
+  "version": "1.0.0",
+  "description": "A Discord bot for the Teenage Tube Discord server, written in JavaScript.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsDkiller/Teenage-Tube-Bot.git"
+  },
+  "keywords": [
+    "itsDkiller",
+    "JavaScript",
+    "Discord.js",
+    "TeenageTube",
+    "Bot"
+  ],
+  "author": "itsDkiller",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/itsDkiller/Teenage-Tube-Bot/issues"
+  },
+  "homepage": "https://github.com/itsDkiller/Teenage-Tube-Bot#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^12.3.1",
+    "moment": "^2.27.0"
+  }
+}
